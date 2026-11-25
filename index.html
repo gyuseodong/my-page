@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>동규서 (로건) | 모두닥 백두산팀</title>
+  <meta name="description" content="대한민국 누구나 합리적인 가격으로 임플란트 치료를 받을 수 있도록 뛰는 Problem Solver, 모두닥 백두산팀 동규서(로건)의 포트폴리오입니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- ===================== CSS: 디자인 (옷) ===================== -->
+  <style>
+    /* 색상 모음: 여기 값만 바꾸면 페이지 전체 색이 바뀝니다 */
+    :root {
+      --bg: #eaf3ff;          /* 배경색 (모두닥 느낌의 연한 파란색) */
+      --card: #ffffff;        /* 박스 배경 */
+      --text: #14161f;        /* 기본 글자 */
+      --muted: #5f6475;       /* 보조 글자 */
+      --line: #cfdcf2;        /* 구분선 */
+      --accent: #2f6bff;      /* 포인트 파란색 */
+      --accent-soft: #dce8ff; /* 연한 포인트 */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --card: #181b24;
+        --text: #f1f3f8;
+        --muted: #a0a6b8;
+        --line: #2a2f3c;
+        --accent: #6b95ff;
+        --accent-soft: #1f2840;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .serif { font-family: "Noto Serif KR", serif; }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* 상단 메뉴 */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .menu {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-size: 14px;
+    }
+    .menu a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .menu a:hover { color: var(--accent); }
+
+    /* 첫 화면: 왼쪽 글 + 오른쪽 사진 */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 88px 0 96px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(44px, 7vw, 72px);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    h1 .en {
+      display: block;
+      font-size: 0.4em;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    .tagline {
+      margin-top: 28px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .tagline b { color: var(--text); font-weight: 700; }
+    .hero-actions {
+      margin-top: 36px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .photo {
+      position: relative;
+    }
+    .photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 40% center;
+      border-radius: 4px;
+    }
+    /* 사진 뒤에 살짝 어긋난 파란 테두리 */
+    .photo::before {
+      content: "";
+      position: absolute;
+      inset: 16px -16px -16px 16px;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .photo figcaption {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* 버튼 */
+    .btn {
+      display: inline-block;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--accent); }
+    .btn-ghost:hover { background: var(--accent-soft); }
+
+    /* 섹션 공통: 왼쪽 제목 + 오른쪽 내용 */
+    section {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 64px;
+    }
+    .label .num {
+      display: block;
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .label h2 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .label .sub {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* 01 소개 */
+    .lead {
+      font-size: 19px;
+      line-height: 1.8;
+    }
+    .lead + .lead { margin-top: 16px; }
+    .lead strong { color: var(--accent); font-weight: 700; }
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+    .facts div { padding-top: 16px; }
+    .facts dt {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .facts dd {
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* 02 하는 일 */
+    .work { display: grid; gap: 16px; }
+    .work-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 8px;
+      transition: border-color 0.2s;
+    }
+    .work-item:hover { border-color: var(--accent); }
+    .work-item .n {
+      font-size: 24px;
+      color: var(--accent);
+      line-height: 1.3;
+    }
+    .work-item h3 { font-size: 18px; margin-bottom: 6px; }
+    .work-item p { font-size: 15px; color: var(--muted); }
+
+    /* 03 풀고 싶은 문제 */
+    .mission-statement {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+    .mission-statement em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .problems { list-style: none; }
+    .problems li {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 8px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .problems li:first-child { padding-top: 0; }
+    .problems li:last-child { border-bottom: none; padding-bottom: 0; }
+    .problems .n {
+      font-size: 22px;
+      color: var(--accent);
+      line-height: 1.4;
+    }
+    .problems strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .problems p { font-size: 15px; color: var(--muted); }
+
+    /* 04 좋아하는 것 */
+    .likes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+    .like {
+      padding: 32px 24px;
+      text-align: center;
+      transition: background 0.25s;
+    }
+    .like + .like { border-left: 1px solid var(--line); }
+    .like:hover { background: var(--accent-soft); }
+    .like .icon {
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 16px;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+    .like:hover .icon { transform: scale(1.2) rotate(-8deg); }
+    .like h3 { font-size: 18px; margin-bottom: 4px; }
+    .like p { font-size: 14px; color: var(--muted); }
+
+    /* 05 인사하기 */
+    .hello-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .hello-box > p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .hello-message {
+      min-height: 2.4em;
+      margin-top: 24px;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s, transform 0.4s;
+    }
+    .hello-message.show {
+      opacity: 1;
+      transform: none;
+    }
+    .hello-count {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 0 56px;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    /* 스크롤하면 섹션이 부드럽게 나타나는 효과 (JavaScript가 켜져 있을 때만) */
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .js .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* 모바일 화면 (폭 720px 이하) */
+    @media (max-width: 720px) {
+      .wrap { padding: 0 16px; }
+      .menu { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 48px 0 64px;
+      }
+      .photo { order: -1; margin-right: 16px; }
+      .tagline { font-size: 16px; }
+      section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 48px 0;
+      }
+      .label h2 { font-size: 20px; }
+      .lead { font-size: 17px; }
+      .facts { grid-template-columns: 1fr; }
+      .work-item { grid-template-columns: 40px 1fr; padding: 22px; }
+      .problems li { grid-template-columns: 36px 1fr; }
+      .likes { grid-template-columns: 1fr; }
+      .like {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        text-align: left;
+        padding: 20px 22px;
+      }
+      .like + .like { border-left: none; border-top: 1px solid var(--line); }
+      .like .icon { font-size: 28px; margin-bottom: 0; }
+      .hello-box { padding: 32px 20px; }
+    }
+  </style>
+</head>
+
+<!-- ===================== HTML: 내용과 구조 (뼈대) ===================== -->
+<body>
+  <!-- 상단 메뉴 -->
+  <nav class="topbar">
+    <div class="wrap">
+      <a class="logo" href="#top">LOGAN</a>
+      <ul class="menu">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#work">하는 일</a></li>
+        <li><a href="#mission">풀고 싶은 문제</a></li>
+        <li><a href="#likes">좋아하는 것</a></li>
+        <li><a href="#hello">인사하기</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrap" id="top">
+    <!-- 첫 화면: 이름 + 프로필 사진 -->
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Implant Sales · Modoodoc</p>
+        <h1 class="serif">동규서<span class="en">Logan</span></h1>
+        <p class="tagline">
+          모두닥 백두산팀에서 대한민국 누구나<br />
+          <b>합리적인 가격으로 임플란트 치료</b>를 받을 수 있도록<br />
+          뛰고 있는 <b>Problem Solver</b>입니다.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hello">인사하러 가기</a>
+          <a class="btn btn-ghost" href="#about">더 알아보기</a>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src="profile.png" alt="해 질 녘 여행지의 다리 위에서 카메라를 들여다보는 로건" />
+        <figcaption>📷 여행지에서, 오늘 찍은 사진을 확인하는 중</figcaption>
+      </figure>
+    </header>
+
+    <main>
+      <!-- 01 소개 -->
+      <section id="about" class="reveal">
+        <div class="label">
+          <span class="num">01</span>
+          <h2 class="serif">소개</h2>
+          <span class="sub">ABOUT</span>
+        </div>
+        <div>
+          <p class="lead">
+            안녕하세요, 모두닥 <strong>백두산팀</strong>의 로건입니다.
+            <strong>임플란트</strong> 중심의 세일즈를 담당하며, 병원이 모두닥에서 더 많은 환자를 만날 수 있도록 돕고 있어요.
+          </p>
+          <p class="lead">
+            일 밖에서는 카메라를 들고 낯선 도시를 걷고, 집에 오면 피파 한 판으로 하루를 마무리합니다.
+          </p>
+          <dl class="facts">
+            <div><dt>소속</dt><dd>모두닥 백두산팀</dd></div>
+            <div><dt>담당</dt><dd>임플란트 세일즈</dd></div>
+            <div><dt>좋아하는 것</dt><dd>사진 · 여행 · 피파</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 02 하는 일 -->
+      <section id="work" class="reveal">
+        <div class="label">
+          <span class="num">02</span>
+          <h2 class="serif">지금 모두닥에서<br />하는 일</h2>
+          <span class="sub">WHAT I DO</span>
+        </div>
+        <div class="work">
+          <article class="work-item">
+            <span class="n serif">01</span>
+            <div>
+              <h3>임플란트 세일즈</h3>
+              <p>임플란트 진료를 하는 병원을 만나, 모두닥에서 더 많은 환자를 만날 수 있는 방법을 제안합니다.</p>
+            </div>
+          </article>
+          <article class="work-item">
+            <span class="n serif">02</span>
+            <div>
+              <h3>임플란트 부가광고</h3>
+              <p>병원이 원하는 목표에 맞춰 임플란트 부가광고 상품을 안내하고 판매합니다.</p>
+            </div>
+          </article>
+          <article class="work-item">
+            <span class="n serif">03</span>
+            <div>
+              <h3>병원 맞춤 솔루션</h3>
+              <p>광고에 그치지 않고, 병원이 실제로 성장할 수 있도록 필요한 솔루션을 함께 고민합니다.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 03 풀고 싶은 문제 -->
+      <section id="mission" class="reveal">
+        <div class="label">
+          <span class="num">03</span>
+          <h2 class="serif">모두닥에서<br />내가 풀고 싶은 문제</h2>
+          <span class="sub">MISSION</span>
+        </div>
+        <div>
+          <p class="mission-statement serif">
+            어디에 살든, 누구든<br />
+            <em>합리적으로 치료받을 수 있는 세상</em>
+          </p>
+          <ul class="problems">
+            <li>
+              <span class="n serif">1</span>
+              <div>
+                <strong>"이 가격이 맞나?" 고민하지 않는 치료</strong>
+                <p>임플란트처럼 큰돈이 드는 치료일수록 환자는 가격 앞에서 불안해집니다. 가격과 정보가 투명하게 보여서, 비교하고 납득한 뒤 선택할 수 있게 만들고 싶어요.</p>
+              </div>
+            </li>
+            <li>
+              <span class="n serif">2</span>
+              <div>
+                <strong>국경이 없는 선택지</strong>
+                <p>사는 나라와 언어가 달라도 좋은 치료를 합리적으로 고를 수 있도록, 병원과 환자 사이의 거리를 전 세계로 넓히고 싶어요.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 04 좋아하는 것 -->
+      <section id="likes" class="reveal">
+        <div class="label">
+          <span class="num">04</span>
+          <h2 class="serif">좋아하는 것</h2>
+          <span class="sub">THINGS I LOVE</span>
+        </div>
+        <div class="likes">
+          <article class="like">
+            <div class="icon" aria-hidden="true">📷</div>
+            <div>
+              <h3>사진 찍기</h3>
+              <p>좋은 순간은 일단 찍고 봐요</p>
+            </div>
+          </article>
+          <article class="like">
+            <div class="icon" aria-hidden="true">✈️</div>
+            <div>
+              <h3>여행</h3>
+              <p>낯선 골목을 걷는 게 제일 좋아요</p>
+            </div>
+          </article>
+          <article class="like">
+            <div class="icon" aria-hidden="true">🎮</div>
+            <div>
+              <h3>피파</h3>
+              <p>패드 잡으면 진심 모드</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 05 인사하기 -->
+      <section id="hello" class="reveal">
+        <div class="label">
+          <span class="num">05</span>
+          <h2 class="serif">인사하기</h2>
+          <span class="sub">SAY HELLO</span>
+        </div>
+        <div class="hello-box">
+          <p>페이지를 끝까지 봐 주셔서 감사합니다. 버튼을 눌러 인사를 받아 주세요!</p>
+          <button id="hello-btn" class="btn btn-primary" type="button">인사하기</button>
+          <p id="hello-message" class="hello-message" aria-live="polite"></p>
+          <p id="hello-count" class="hello-count"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 동규서 (Logan) · 모두닥 백두산팀 · 모두코딩 1주차에 Claude Code로 만든 페이지</footer>
+  </div>
+
+  <!-- ===================== JavaScript: 동작 (움직임) ===================== -->
+  <script>
+    // 1) "인사하기" 버튼을 누르면 → "반갑습니다!" 문구가 페이지에 나타난다
+    const helloBtn = document.getElementById("hello-btn");
+    const helloMessage = document.getElementById("hello-message");
+    const helloCount = document.getElementById("hello-count");
+    let clicks = 0;
+
+    helloBtn.addEventListener("click", () => {
+      clicks += 1;
+      helloMessage.textContent = "반갑습니다! 👋";
+      helloMessage.classList.add("show");
+      helloCount.textContent = clicks > 1 ? `벌써 ${clicks}번째 인사예요` : "";
+    });
+
+    // 2) 스크롤해서 섹션이 화면에 들어오면 → 부드럽게 나타난다
+    document.documentElement.classList.add("js");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
