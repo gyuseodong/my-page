@@ -294,6 +294,7 @@
       text-align: center;
       transition: background 0.25s;
     }
+    .likes.cols-2 { grid-template-columns: repeat(2, 1fr); }
     .like + .like { border-left: 1px solid var(--line); }
     .like:hover { background: var(--accent-soft); }
     .like .icon {
@@ -381,7 +382,7 @@
       .facts { grid-template-columns: 1fr; }
       .work-item { grid-template-columns: 40px 1fr; padding: 22px; }
       .problems li { grid-template-columns: 36px 1fr; }
-      .likes { grid-template-columns: 1fr; }
+      .likes, .likes.cols-2 { grid-template-columns: 1fr; }
       .like {
         display: flex;
         align-items: center;
@@ -407,6 +408,7 @@
         <li><a href="#work">하는 일</a></li>
         <li><a href="#mission">풀고 싶은 문제</a></li>
         <li><a href="#likes">좋아하는 것</a></li>
+        <li><a href="#hobby">요즘 빠진 것</a></li>
         <li><a href="#hello">인사하기</a></li>
       </ul>
     </div>
@@ -553,10 +555,33 @@
         </div>
       </section>
 
-      <!-- 05 인사하기 -->
-      <section id="hello" class="reveal">
+      <!-- 05 요즘 빠진 것 -->
+      <section id="hobby" class="reveal">
         <div class="label">
           <span class="num">05</span>
+          <h2 class="serif">요즘 빠진 것</h2>
+          <span class="sub">LATELY INTO</span>
+        </div>
+        <div class="likes cols-2">
+          <article class="like">
+            <div class="icon" aria-hidden="true">🎧</div>
+            <div>
+              <h3>J-pop 듣기</h3>
+            </div>
+          </article>
+          <article class="like">
+            <div class="icon" aria-hidden="true">🏃</div>
+            <div>
+              <h3>러닝</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 06 인사하기 -->
+      <section id="hello" class="reveal">
+        <div class="label">
+          <span class="num">06</span>
           <h2 class="serif">인사하기</h2>
           <span class="sub">SAY HELLO</span>
         </div>
